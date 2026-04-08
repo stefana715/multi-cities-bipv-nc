@@ -1026,8 +1026,15 @@ def main():
         all_results.append(result)
 
     # ── 汇总 ──
-    summary_df = pd.DataFrame(all_results)
+    new_df = pd.DataFrame(all_results)
     summary_path = RESULTS_DIR / "cross_city_d1d4d5.csv"
+    if args.city and summary_path.exists():
+        # 单城市模式：合并进已有汇总表，不覆写其他城市
+        existing = pd.read_csv(summary_path)
+        existing = existing[~existing["city"].isin(new_df["city"])]
+        summary_df = pd.concat([existing, new_df], ignore_index=True)
+    else:
+        summary_df = new_df
     summary_df.to_csv(summary_path, index=False, encoding="utf-8-sig")
     log.info(f"\n汇总表: {summary_path}")
 

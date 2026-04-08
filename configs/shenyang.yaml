@@ -1,6 +1,13 @@
 # =============================================================================
 # Shenyang (沈阳) - Severe Cold Zone (严寒地区)
 # =============================================================================
+# FIX LOG (NC Phase 1a):
+#   - 旧 bbox [41.85, 41.75, 123.50, 123.38] 覆盖了沈河区郊区，
+#     仅获取687栋建筑，98%为低层(3m)，与沈阳实际住宅形态严重不符。
+#   - 新方案：改用和平区核心住宅区 bbox，该区域是沈阳最典型的
+#     多层/中高层住宅集中区（6-30层板式住宅为主）。
+#   - 备选方案：皇姑区 bbox [41.835, 41.785, 123.445, 123.385]
+# =============================================================================
 
 city:
   name_en: "Shenyang"
@@ -21,9 +28,10 @@ urban_profile:
   development_stage: "mixed_age"
 
 osm:
-  # Nominatim 无法识别"沈河区"，改用 bbox（沈河区核心区）
+  # 和平区核心住宅区 bbox（北至南湖公园，南至浑河，东至青年大街，西至南京街）
+  # 该区域以6-30层住宅为主，是沈阳最具代表性的居住区之一
   place_query: null
-  bbox: [41.85, 41.75, 123.50, 123.38]   # north, south, east, west；DCS=0.401 PASS
+  bbox: [41.815, 41.775, 123.435, 123.385]   # north, south, east, west
   relation_id: null
   residential_tags:
     building: ["residential", "apartments", "house", "detached", "semidetached_house", "terrace"]

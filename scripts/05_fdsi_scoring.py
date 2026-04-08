@@ -481,7 +481,13 @@ def plot_radar(dim_scores: pd.DataFrame, save_path: Path):
     angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
     angles += angles[:1]
 
-    colors = ["#E53935", "#1E88E5", "#43A047", "#FB8C00", "#8E24AA"]
+    colors = [
+        "#E53935", "#C62828", "#B71C1C",   # Severe Cold (reds)
+        "#1E88E5", "#1565C0", "#0D47A1",   # Cold (blues)
+        "#43A047", "#2E7D32", "#1B5E20",   # HSCW (greens)
+        "#FB8C00", "#E65100", "#BF360C",   # HSWW (oranges)
+        "#8E24AA", "#6A1B9A", "#4A148C",   # Mild (purples)
+    ]
     city_labels = [f"{CITY_META[c]['name_en']}\n({CITY_META[c]['zone']})" for c in CITY_ORDER]
 
     fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
@@ -592,7 +598,13 @@ def plot_weight_sensitivity(sensitivity_df: pd.DataFrame, save_path: Path):
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
 
-    colors = ["#E53935", "#1E88E5", "#43A047", "#FB8C00", "#8E24AA"]
+    colors = [
+        "#E53935", "#C62828", "#B71C1C",   # Severe Cold (reds)
+        "#1E88E5", "#1565C0", "#0D47A1",   # Cold (blues)
+        "#43A047", "#2E7D32", "#1B5E20",   # HSCW (greens)
+        "#FB8C00", "#E65100", "#BF360C",   # HSWW (oranges)
+        "#8E24AA", "#6A1B9A", "#4A148C",   # Mild (purples)
+    ]
     city_labels = [CITY_META[c]["name_en"] for c in CITY_ORDER]
 
     # Panel 1: FDSI score vs alpha
