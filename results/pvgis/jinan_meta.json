@@ -1,0 +1,11 @@
+{
+  "city": "jinan",
+  "latitude": 36.65,
+  "longitude": 116.99,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-06T10:42:28.540652",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

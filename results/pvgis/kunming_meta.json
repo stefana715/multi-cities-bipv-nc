@@ -1,0 +1,11 @@
+{
+  "city": "kunming",
+  "latitude": 25.04,
+  "longitude": 102.68,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-05T22:12:03.767836",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

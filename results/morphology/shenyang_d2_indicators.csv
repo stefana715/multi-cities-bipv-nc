@@ -1,0 +1,2 @@
+city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
+shenyang,687,75.214,3.5,3.0,3.54,0.0089,978.6,675.4,672289.0,2.238,2.017,0.011

@@ -1,0 +1,11 @@
+{
+  "city": "shenyang",
+  "latitude": 41.8,
+  "longitude": 123.43,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-06T10:41:34.133614",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

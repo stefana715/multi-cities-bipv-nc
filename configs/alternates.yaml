@@ -1,0 +1,57 @@
+# =============================================================================
+# Alternate Candidate Cities for Layer 3 Screening
+# These are audited alongside primary cities; if a primary city fails
+# the data availability threshold, the best alternate replaces it.
+# =============================================================================
+
+alternates:
+  severe_cold:
+    - name_en: "Changchun"
+      name_cn: "长春"
+      province: "Jilin"
+      latitude: 43.88
+      longitude: 125.32
+      place_query: "朝阳区, 长春市, 中国"
+      city_tier: "large"
+      dominant_housing: "mixed"
+
+    - name_en: "Shenyang"
+      name_cn: "沈阳"
+      province: "Liaoning"
+      latitude: 41.80
+      longitude: 123.43
+      place_query: "沈河区, 沈阳市, 中国"
+      city_tier: "super_large"
+      dominant_housing: "mixed"
+
+  cold:
+    - name_en: "Xi'an"
+      name_cn: "西安"
+      province: "Shaanxi"
+      latitude: 34.26
+      longitude: 108.94
+      place_query: "碑林区, 西安市, 中国"
+      city_tier: "super_large"
+      dominant_housing: "mixed"
+
+    - name_en: "Jinan"
+      name_cn: "济南"
+      province: "Shandong"
+      latitude: 36.65
+      longitude: 116.99
+      place_query: "历下区, 济南市, 中国"
+      city_tier: "super_large"
+      dominant_housing: "high_rise"
+
+  # hscw: Changsha is fixed (Paper 2 heritage) - no alternates needed
+  # hsww: Shenzhen is fixed (Paper 1 heritage) - no alternates needed
+
+  mild:
+    - name_en: "Guiyang"
+      name_cn: "贵阳"
+      province: "Guizhou"
+      latitude: 26.65
+      longitude: 106.63
+      place_query: "南明区, 贵阳市, 中国"
+      city_tier: "large"
+      dominant_housing: "mid_rise"

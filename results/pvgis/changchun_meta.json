@@ -1,0 +1,11 @@
+{
+  "city": "changchun",
+  "latitude": 43.88,
+  "longitude": 125.32,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-06T10:40:44.221399",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

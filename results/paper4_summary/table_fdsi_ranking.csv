@@ -1,0 +1,16 @@
+﻿city,name_en,climate_zone,fdsi_score,rank,suitability
+xiamen,Xiamen,HSWW,0.8913,1,High
+jinan,Jinan,Cold,0.7989,2,High
+beijing,Beijing,Cold,0.7626,3,High
+shenyang,Shenyang,Severe Cold,0.715,4,High
+guangzhou,Guangzhou,HSWW,0.6949,5,Medium
+shenzhen,Shenzhen,HSWW,0.6939,6,Medium
+kunming,Kunming,Mild,0.6917,7,Medium
+wuhan,Wuhan,HSCW,0.6805,8,Medium
+xian,Xian,Cold,0.68,9,Medium
+nanjing,Nanjing,HSCW,0.6799,10,Medium
+harbin,Harbin,Severe Cold,0.6144,11,Medium
+changsha,Changsha,HSCW,0.608,12,Medium
+changchun,Changchun,Severe Cold,0.5654,13,Medium
+chengdu,Chengdu,Mild,0.3856,14,Low
+guiyang,Guiyang,Mild,0.2371,15,Low

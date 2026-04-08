@@ -1,0 +1,6 @@
+city,local_density_100m_mean,local_density_100m_median,local_density_100m_std,n_sampled
+harbin,0.2447,0.2349,0.1555,2000
+beijing,0.1624,0.153,0.0762,2000
+changsha,0.1825,0.1683,0.1035,2000
+shenzhen,0.2148,0.1821,0.12,2000
+kunming,0.1419,0.1137,0.0959,2000

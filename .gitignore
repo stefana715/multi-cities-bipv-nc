@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large binary files
+*.gpkg
+*.parquet
+
+# PVGIS raw data (too large, can re-download)
+results/pvgis/*.csv
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/

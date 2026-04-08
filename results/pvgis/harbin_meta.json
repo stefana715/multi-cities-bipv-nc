@@ -1,0 +1,11 @@
+{
+  "city": "harbin",
+  "latitude": 45.75,
+  "longitude": 126.65,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-05T22:09:42.891692",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

@@ -1,0 +1,16 @@
+﻿city,name_en,name_cn,climate_zone,grid_region,specific_yield_kwh_kwp,elec_price_cny_kwh,npv_cny_kwp,irr_pct,emission_factor_tco2_mwh,co2_annual_tco2_kwp,co2_lifetime_tco2_kwp,co2_annual_kgco2_kwh
+harbin,Harbin,哈尔滨,Severe Cold,东北,1259.4,0.51,4467.0,19.68,0.8437,1.0626,25.03,0.8437
+changchun,Changchun,长春,Severe Cold,东北,1343.9,0.52,5158.0,21.62,0.8437,1.1338,26.71,0.8437
+shenyang,Shenyang,沈阳,Severe Cold,东北,1326.1,0.53,5207.0,21.76,0.8437,1.1188,26.36,0.8437
+beijing,Beijing,北京,Cold,华北,1357.9,0.4883,4721.0,20.4,0.8843,1.2008,28.29,0.8843
+jinan,Jinan,济南,Cold,华北,1362.3,0.547,5724.0,23.2,0.8843,1.2047,28.38,0.8843
+xian,Xian,西安,Cold,华北,1352.7,0.498,4850.0,20.76,0.8843,1.1962,28.18,0.8843
+changsha,Changsha,长沙,HSCW,华中,1162.1,0.588,4968.0,21.09,0.5257,0.6109,14.39,0.5257
+wuhan,Wuhan,武汉,HSCW,华中,1269.4,0.558,5274.0,21.95,0.5257,0.6673,15.72,0.5257
+nanjing,Nanjing,南京,HSCW,华中,1238.9,0.558,5066.0,21.37,0.5257,0.6513,15.34,0.5257
+shenzhen,Shenzhen,深圳,HSWW,华南,1298.9,0.68,7412.0,27.87,0.4267,0.5542,13.06,0.4267
+guangzhou,Guangzhou,广州,HSWW,华南,1251.8,0.68,7020.0,26.79,0.4267,0.5341,12.58,0.4267
+xiamen,Xiamen,厦门,HSWW,华南,1385.1,0.618,7079.0,26.95,0.4267,0.591,13.92,0.4267
+kunming,Kunming,昆明,Mild,云南,1405.1,0.45,4345.0,19.34,0.1578,0.2217,5.22,0.1578
+guiyang,Guiyang,贵阳,Mild,贵州,1020.1,0.468,2451.0,13.87,0.6158,0.6282,14.8,0.6158
+chengdu,Chengdu,成都,Mild,四川,1094.0,0.502,3329.0,16.44,0.1373,0.1502,3.54,0.1373

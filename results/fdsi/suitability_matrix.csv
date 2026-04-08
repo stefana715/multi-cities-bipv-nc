@@ -1,0 +1,16 @@
+city,city_cn,climate_zone,climate_zone_cn,dominant_morphology,fdsi_score,fdsi_rank,suitability,uncertainty,D1_score,D2_score,D3_score,D4_score,D5_score,dominant_factor_yield,dominant_factor_pbt
+Xiamen,厦门,HSWW,夏热冬暖,mid_high,0.8913,1,High,Low,0.983,0.553,0.856,0.963,0.98,ghi_factor,pv_cost
+Jinan,济南,Cold,寒冷,mid_high,0.7989,2,High,Low,0.708,0.587,0.915,0.853,0.809,ghi_factor,pv_cost
+Beijing,北京,Cold,寒冷,mid_rise,0.7626,3,High,Medium,0.71,0.723,0.88,0.763,0.691,ghi_factor,pv_cost
+Shenyang,沈阳,Severe Cold,严寒,mid_high,0.715,4,High,Medium,0.538,0.753,0.809,0.774,0.699,ghi_factor,pv_cost
+Guangzhou,广州,HSWW,夏热冬暖,mid_high,0.6949,5,High,Low,0.786,0.743,0.389,0.817,0.882,ghi_factor,pv_cost
+Shenzhen,深圳,HSWW,夏热冬暖,high_rise,0.6939,6,Medium,Low,0.871,0.447,0.362,0.892,0.942,ghi_factor,pv_cost
+Kunming,昆明,Mild,温和,mid_high,0.6917,7,Medium,Medium,0.889,0.662,0.529,0.771,0.695,ghi_factor,pv_cost
+Wuhan,武汉,HSCW,夏热冬冷,mid_high,0.6805,8,Medium,Low,0.583,0.583,0.736,0.717,0.721,ghi_factor,pv_cost
+Xian,西安,Cold,寒冷,mid_high,0.68,9,Medium,Medium,0.661,0.0,0.903,0.77,0.715,ghi_factor,pv_cost
+Nanjing,南京,HSCW,夏热冬冷,mid_high,0.6799,10,Medium,High,0.668,0.568,0.755,0.662,0.666,ghi_factor,pv_cost
+Harbin,哈尔滨,Severe Cold,严寒,mid_high,0.6144,11,Low,High,0.364,0.864,0.752,0.63,0.53,ghi_factor,pv_cost
+Changsha,长沙,HSCW,夏热冬冷,mid_high,0.608,12,Low,High,0.524,0.698,0.655,0.555,0.605,ghi_factor,pv_cost
+Changchun,长春,Severe Cold,严寒,mid_high,0.5654,13,Low,Medium,0.5,0.516,0.421,0.788,0.688,ghi_factor,pv_cost
+Chengdu,成都,Mild,温和,mid_high,0.3856,14,Low,High,0.205,0.567,0.567,0.269,0.298,ghi_factor,pv_cost
+Guiyang,贵阳,Mild,温和,mid_high,0.2371,15,Low,High,0.0,0.771,0.5,0.0,0.0,ghi_factor,pv_cost

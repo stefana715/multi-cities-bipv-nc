@@ -1,0 +1,11 @@
+{
+  "city": "changsha",
+  "latitude": 28.23,
+  "longitude": 112.94,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-05T22:10:47.566556",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

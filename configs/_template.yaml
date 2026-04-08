@@ -1,0 +1,107 @@
+# =============================================================================
+# Paper 4 City Configuration Template
+# Copy this file and rename to {city_name}.yaml
+# =============================================================================
+
+# --- City Identity ---
+city:
+  name_en: ""                    # English name
+  name_cn: ""                    # Chinese name (中文名)
+  climate_zone: ""               # GB50176 zone: severe_cold / cold / hscw / hsww / mild
+  climate_zone_cn: ""            # 严寒 / 寒冷 / 夏热冬冷 / 夏热冬暖 / 温和
+  province: ""
+  latitude: null                 # decimal degrees
+  longitude: null
+  is_primary: true               # true = preferred city; false = alternate candidate
+  paper_heritage: null           # "paper1" / "paper2" / null (indicates data reuse)
+
+# --- Layer 2: Urban Representativeness (qualitative) ---
+urban_profile:
+  population_million: null       # 常住人口 (百万)
+  built_area_km2: null           # 建成区面积
+  city_tier: ""                  # mega / super_large / large / medium
+  dominant_housing: ""           # high_rise / mid_rise / mixed / low_rise
+  development_stage: ""          # new_dominant / mixed_age / old_dominant
+
+# --- OSM Query Parameters ---
+osm:
+  # Define the study area - use ONE of the following methods:
+  # Method 1: Place name query (osmnx geocode)
+  place_query: ""                # e.g. "Futian District, Shenzhen, China"
+  # Method 2: Bounding box [north, south, east, west]
+  bbox: null
+  # Method 3: Administrative boundary relation ID
+  relation_id: null
+
+  # Residential filtering tags (used to identify residential buildings)
+  residential_tags:
+    building:
+      - "residential"
+      - "apartments"
+      - "house"
+      - "detached"
+      - "semidetached_house"
+      - "terrace"
+    landuse:
+      - "residential"
+
+  # Default floor height assumption (meters) when only levels available
+  default_floor_height: 3.0
+
+# --- PVGIS Parameters ---
+pvgis:
+  api_base: "https://re.jrc.ec.europa.eu/api/v5_3"
+  data_products:
+    - "tmy"                      # Typical Meteorological Year
+    - "series"                   # Multi-year hourly series
+  series_years: [2005, 2020]     # Start and end year for hourly series
+  optimal_angle: null            # Will be fetched from PVGIS; null = auto
+
+# --- PV System Assumptions ---
+pv_system:
+  module_efficiency: 0.20        # 20% baseline (mainstream mono-Si)
+  module_power_wp: 550           # Watts peak per module
+  module_area_m2: 2.58           # m² per module
+  temperature_coefficient: -0.0035  # %/°C (typical mono-Si)
+  inverter_efficiency: 0.96
+  system_losses: 0.14            # 14% total BOS losses
+  tilt: null                     # null = latitude-based default
+  azimuth: 180                   # South-facing (Northern Hemisphere)
+  roof_utilization_ratio: 0.70   # Fraction of roof usable for PV
+
+# --- Economic Parameters ---
+economics:
+  electricity_price_cny_kwh: null      # Residential tariff (CNY/kWh)
+  pv_cost_cny_wp: 3.0                 # System installed cost
+  annual_degradation: 0.005            # 0.5%/year
+  system_lifetime_years: 25
+  discount_rate: 0.06                  # 6% for LCOE calculation
+  subsidy_cny_kwh: 0.0                # Feed-in subsidy (if any)
+  o_and_m_ratio: 0.01                 # Annual O&M as fraction of CapEx
+
+# --- Monte Carlo Parameters ---
+monte_carlo:
+  n_samples: 10000
+  sampling_method: "lhs"              # Latin Hypercube Sampling
+  random_seed: 42
+  uncertain_params:
+    ghi_uncertainty: 0.05             # ±5% of TMY GHI
+    module_efficiency:
+      distribution: "triangular"
+      params: [0.18, 0.20, 0.22]     # min, mode, max
+    system_losses:
+      distribution: "uniform"
+      params: [0.10, 0.18]           # min, max
+    pv_cost_cny_wp:
+      distribution: "triangular"
+      params: [2.5, 3.0, 4.0]
+    electricity_price_factor:
+      distribution: "uniform"
+      params: [0.9, 1.1]             # ±10% of base price
+
+# --- Sobol Analysis Parameters ---
+sensitivity:
+  method: "sobol"
+  n_samples: 4096                     # Must be power of 2 for Sobol
+  confidence_level: 0.95
+  calc_second_order: true

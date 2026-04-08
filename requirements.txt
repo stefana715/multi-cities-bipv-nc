@@ -1,0 +1,31 @@
+# Paper 4: Multi-Factor BIPV Suitability Framework
+# Core dependencies
+
+# Data & GIS
+osmnx>=1.6
+geopandas>=0.14
+pandas>=2.0
+numpy>=1.24
+shapely>=2.0
+
+# Configuration
+pyyaml>=6.0
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+tabulate>=0.9
+
+# PV simulation (Step 3+)
+pvlib>=0.10
+SALib>=1.4
+scipy>=1.10
+
+# Parallel computing
+joblib>=1.3
+
+# HTTP requests (PVGIS download)
+requests>=2.28
+
+# Excel output (Level 2 tool)
+openpyxl>=3.1

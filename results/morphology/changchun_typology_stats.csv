@@ -1,0 +1,5 @@
+typology,count,height_mean,height_std,area_mean,area_total,floors_mean,roof_util_mean,shading_mean,effective_pv_mean,effective_pv_total,pct
+low_rise,45,8.07,1.4,476.48,21441.62,2.69,0.62,0.74,235.06,10577.69,1.5
+mid_rise,2508,17.68,1.21,812.88,2038692.91,5.89,0.65,0.99,537.62,1348354.83,85.4
+mid_high,237,21.22,0.91,906.44,214827.31,7.07,0.66,0.98,602.67,142832.39,8.1
+high_rise,146,46.47,11.5,688.8,100565.15,15.49,0.64,0.96,440.83,64361.55,5.0

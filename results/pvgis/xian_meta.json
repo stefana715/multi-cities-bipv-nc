@@ -1,0 +1,11 @@
+{
+  "city": "xian",
+  "latitude": 34.26,
+  "longitude": 108.94,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-06T10:42:55.801065",
+  "results": {
+    "tmy": true,
+    "hourly": true
+  }
+}

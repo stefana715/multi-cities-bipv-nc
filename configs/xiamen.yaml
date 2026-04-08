@@ -1,0 +1,73 @@
+# =============================================================================
+# Xiamen (厦门) - Hot Summer Warm Winter Zone (夏热冬暖地区)
+# =============================================================================
+
+city:
+  name_en: "Xiamen"
+  name_cn: "厦门"
+  climate_zone: "hsww"
+  climate_zone_cn: "夏热冬暖"
+  province: "Fujian"
+  latitude: 24.48
+  longitude: 118.09
+  is_primary: false
+  paper_heritage: null
+
+urban_profile:
+  population_million: 5.2
+  built_area_km2: 397
+  city_tier: "large"
+  dominant_housing: "mixed"
+  development_stage: "new_dominant"
+
+osm:
+  place_query: "思明区, 厦门市, 中国"
+  bbox: null
+  relation_id: null
+  residential_tags:
+    building: ["residential", "apartments", "house", "detached", "semidetached_house", "terrace"]
+    landuse: ["residential"]
+  default_floor_height: 3.0
+
+pvgis:
+  api_base: "https://re.jrc.ec.europa.eu/api/v5_3"
+  data_products: ["tmy", "series"]
+  series_years: [2005, 2020]
+  optimal_angle: null
+
+pv_system:
+  module_efficiency: 0.20
+  module_power_wp: 550
+  module_area_m2: 2.58
+  temperature_coefficient: -0.0035
+  inverter_efficiency: 0.96
+  system_losses: 0.14
+  tilt: null       # Will default to ~24° (latitude-based)
+  azimuth: 180
+  roof_utilization_ratio: 0.70
+
+economics:
+  electricity_price_cny_kwh: 0.618    # Fujian residential tier-1
+  pv_cost_cny_wp: 3.0
+  annual_degradation: 0.005
+  system_lifetime_years: 25
+  discount_rate: 0.06
+  subsidy_cny_kwh: 0.0
+  o_and_m_ratio: 0.01
+
+monte_carlo:
+  n_samples: 10000
+  sampling_method: "lhs"
+  random_seed: 42
+  uncertain_params:
+    ghi_uncertainty: 0.05
+    module_efficiency: { distribution: "triangular", params: [0.18, 0.20, 0.22] }
+    system_losses: { distribution: "uniform", params: [0.10, 0.18] }
+    pv_cost_cny_wp: { distribution: "triangular", params: [2.5, 3.0, 4.0] }
+    electricity_price_factor: { distribution: "uniform", params: [0.9, 1.1] }
+
+sensitivity:
+  method: "sobol"
+  n_samples: 4096
+  confidence_level: 0.95
+  calc_second_order: true

@@ -1,0 +1,2 @@
+city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
+shenzhen,5361,60.827,40.67,33.0,24.79,0.0432,490.4,406.1,2629050.0,2.152,1.789,0.667

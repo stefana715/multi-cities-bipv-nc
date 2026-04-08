@@ -1,0 +1,16 @@
+﻿excluded_city,mean_rank_change,max_rank_change,n_stable
+harbin,0.29,1,14
+changchun,0.14,1,14
+shenyang,0.79,1,14
+beijing,0.86,1,14
+jinan,0.93,1,14
+xian,0.43,1,14
+changsha,0.21,1,14
+wuhan,0.5,1,14
+nanjing,0.36,1,14
+shenzhen,0.64,1,14
+guangzhou,0.71,1,14
+xiamen,1.0,1,14
+kunming,0.57,1,14
+guiyang,0.0,0,14
+chengdu,0.07,1,14
