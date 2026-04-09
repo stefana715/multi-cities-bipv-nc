@@ -1,0 +1,73 @@
+{
+  "tests": {
+    "original": {
+      "rs_vs_ghi": 0.7601,
+      "p_vs_ghi": 0.0,
+      "rs_vs_original": 1.0,
+      "p_vs_original": 0.0,
+      "median_shift_from_ghi": 5.0,
+      "mean_shift_from_ghi": 5.9,
+      "core_finding_survives": true,
+      "ranking_stable": true
+    },
+    "equal_weight": {
+      "rs_vs_ghi": 0.201,
+      "p_vs_ghi": 0.2077,
+      "rs_vs_original": 0.2139,
+      "p_vs_original": 0.1794,
+      "median_shift_from_ghi": 9.0,
+      "mean_shift_from_ghi": 11.2,
+      "core_finding_survives": true,
+      "ranking_stable": false
+    },
+    "no_D5": {
+      "rs_vs_ghi": 0.1683,
+      "p_vs_ghi": 0.2929,
+      "rs_vs_original": 0.1507,
+      "p_vs_original": 0.347,
+      "median_shift_from_ghi": 8.0,
+      "mean_shift_from_ghi": 11.6,
+      "core_finding_survives": true,
+      "ranking_stable": false
+    },
+    "no_D4": {
+      "rs_vs_ghi": 0.2226,
+      "p_vs_ghi": 0.1618,
+      "rs_vs_original": 0.203,
+      "p_vs_original": 0.2031,
+      "median_shift_from_ghi": 9.0,
+      "mean_shift_from_ghi": 11.0,
+      "core_finding_survives": true,
+      "ranking_stable": false
+    },
+    "pca_composite": {
+      "rs_vs_ghi": 0.0652,
+      "p_vs_ghi": 0.6857,
+      "rs_vs_original": 0.1136,
+      "p_vs_original": 0.4795,
+      "median_shift_from_ghi": 8.0,
+      "mean_shift_from_ghi": 12.3,
+      "core_finding_survives": true,
+      "ranking_stable": false
+    }
+  },
+  "pca": {
+    "pca_var_explained_pc1": 54.1,
+    "pca_loadings": {
+      "D1": -0.545,
+      "D2": -0.104,
+      "D3": -0.418,
+      "D4": -0.545,
+      "D5": -0.47
+    }
+  },
+  "persistent_misclass": {
+    "n_persistent_all": 6,
+    "n_persistent_majority": 29,
+    "persistent_cities": "Harbin, Beijing, Qingdao, Changsha, Guangzhou, Hong Kong"
+  },
+  "overall": {
+    "core_finding_robust": true,
+    "rankings_stable": false
+  }
+}

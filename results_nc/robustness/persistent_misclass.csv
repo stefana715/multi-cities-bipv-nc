@@ -1,0 +1,7 @@
+﻿city,name_en,ghi_rank,rank_original,rank_equal_weight,rank_no_D5,rank_no_D4,rank_pca_composite,n_schemes_misclassified
+Lhasa,Harbin,32,16,1,1,1,1,5
+Beijing,Beijing,17,8,10,10,6,12,5
+Changchun,Qingdao,7,25,18,19,18,17,5
+Tianjin,Changsha,37,17,21,22,20,19,5
+Ningbo,Guangzhou,26,12,33,33,32,34,5
+Guiyang,Hong Kong,11,32,38,37,35,40,5

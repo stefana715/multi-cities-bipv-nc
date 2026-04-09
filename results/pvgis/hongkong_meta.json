@@ -1,0 +1,10 @@
+{
+  "city": "hongkong",
+  "latitude": 22.32,
+  "longitude": 114.17,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-09T22:06:34.029319",
+  "results": {
+    "tmy": true
+  }
+}

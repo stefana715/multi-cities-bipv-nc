@@ -1,40 +1,42 @@
 city,name_en,climate_zone,fdsi_score,rank
-lhasa,Lhasa,Mild,0.7556,1
-yinchuan,Yinchuan,Cold,0.7533,2
-shijiazhuang,Shijiazhuang,Cold,0.6937,3
-haikou,Haikou,HSWW,0.6831,4
-lanzhou,Lanzhou,Cold,0.6758,5
-hohhot,Hohhot,Severe Cold,0.6656,6
-kunming,Kunming,Mild,0.6623,7
-xining,Xining,Cold,0.6599,8
-xiamen,Xiamen,HSWW,0.6566,9
-beijing,Beijing,Cold,0.6565,10
-guangzhou,Guangzhou,HSWW,0.6348,11
-wuhan,Wuhan,HSCW,0.6059,12
-harbin,Harbin,Severe Cold,0.5988,13
-shenzhen,Shenzhen,HSWW,0.597,14
-changsha,Changsha,HSCW,0.5921,15
-xian,Xian,Cold,0.5846,16
-jinan,Jinan,Cold,0.5814,17
-changchun,Changchun,Severe Cold,0.5802,18
-shenyang,Shenyang,Severe Cold,0.5792,19
-dalian,Dalian,Severe Cold,0.5787,20
-zhengzhou,Zhengzhou,Cold,0.5731,21
-tianjin,Tianjin,Cold,0.5707,22
-wuxi,Wuxi,Cold,0.5702,23
-tangshan,Tangshan,Severe Cold,0.5566,24
-nanning,Nanning,HSWW,0.555,25
-nanchang,Nanchang,HSCW,0.552,26
-qingdao,Qingdao,Cold,0.5486,27
-hefei,Hefei,HSCW,0.5482,28
-taiyuan,Taiyuan,Cold,0.5473,29
-nanjing,Nanjing,HSCW,0.542,30
-urumqi,Urumqi,Severe Cold,0.5348,31
-ningbo,Ningbo,HSCW,0.4748,32
-shanghai,Shanghai,HSCW,0.4517,33
-fuzhou,Fuzhou,HSWW,0.435,34
-hangzhou,Hangzhou,HSCW,0.4328,35
-suzhou,Suzhou,Cold,0.3836,36
-guiyang,Guiyang,Mild,0.3594,37
-chengdu,Chengdu,HSCW,0.3225,38
-chongqing,Chongqing,HSCW,0.1823,39
+lhasa,Lhasa,Mild,0.7422,1
+yinchuan,Yinchuan,Cold,0.7224,2
+lanzhou,Lanzhou,Cold,0.6479,3
+kunming,Kunming,Mild,0.6408,4
+shijiazhuang,Shijiazhuang,Cold,0.6382,5
+haikou,Haikou,HSWW,0.6368,6
+xining,Xining,Cold,0.6345,7
+beijing,Beijing,Cold,0.6279,8
+hohhot,Hohhot,Severe Cold,0.6261,9
+xiamen,Xiamen,HSWW,0.6261,10
+xian,Xian,Cold,0.5961,11
+guangzhou,Guangzhou,HSWW,0.589,12
+wuhan,Wuhan,HSCW,0.585,13
+shenzhen,Shenzhen,HSWW,0.5737,14
+changchun,Changchun,Severe Cold,0.5701,15
+harbin,Harbin,Severe Cold,0.565,16
+changsha,Changsha,HSCW,0.5612,17
+jinan,Jinan,Cold,0.554,18
+shenyang,Shenyang,Severe Cold,0.5515,19
+zhengzhou,Zhengzhou,Cold,0.5488,20
+tianjin,Tianjin,Cold,0.5483,21
+dalian,Dalian,Severe Cold,0.5472,22
+tangshan,Tangshan,Severe Cold,0.5408,23
+wuxi,Wuxi,Cold,0.533,24
+qingdao,Qingdao,Cold,0.5327,25
+urumqi,Urumqi,Severe Cold,0.5311,26
+taiyuan,Taiyuan,Cold,0.5247,27
+nanning,Nanning,HSWW,0.5186,28
+nanchang,Nanchang,HSCW,0.5179,29
+nanjing,Nanjing,HSCW,0.5179,30
+hefei,Hefei,HSCW,0.5147,31
+hongkong,Hong Kong,HSWW,0.4575,32
+ningbo,Ningbo,HSCW,0.444,33
+shanghai,Shanghai,HSCW,0.4408,34
+hangzhou,Hangzhou,HSCW,0.4068,35
+fuzhou,Fuzhou,HSWW,0.4061,36
+suzhou,Suzhou,Cold,0.375,37
+guiyang,Guiyang,Mild,0.3218,38
+chengdu,Chengdu,HSCW,0.3207,39
+taipei,Taipei,HSCW,0.2926,40
+chongqing,Chongqing,HSCW,0.1752,41

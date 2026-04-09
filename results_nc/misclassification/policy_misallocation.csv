@@ -1,0 +1,4 @@
+﻿selection_fraction,k,overlap,precision_pct,n_missed,n_false_positive
+0.25,10,8,80.0,2,2
+0.33,13,9,69.2,4,4
+0.5,20,13,65.0,7,7

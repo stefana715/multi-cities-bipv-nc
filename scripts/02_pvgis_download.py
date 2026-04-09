@@ -94,6 +94,9 @@ CITIES = {
     "nanning":      {"lat": 22.82, "lon": 108.37, "name": "Nanning"},
     "haikou":       {"lat": 20.04, "lon": 110.32, "name": "Haikou"},
     "lhasa":        {"lat": 29.65, "lon":  91.11, "name": "Lhasa"},
+    # ── 2 non-mainland cities (NC extension) ──
+    "hongkong":     {"lat": 22.32, "lon": 114.17, "name": "Hong Kong"},
+    "taipei":       {"lat": 25.03, "lon": 121.57, "name": "Taipei"},
 }
 
 

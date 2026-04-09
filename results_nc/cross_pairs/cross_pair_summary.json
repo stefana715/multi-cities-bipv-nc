@@ -1,0 +1,10 @@
+{
+  "type_a_n_pairs": 5,
+  "type_b_n_pairs": 5,
+  "type_c_n_pairs": 5,
+  "narratives": [
+    "[Type C — 最强证据] Harbin and Taipei receive nearly identical solar irradiance (1424 vs 1401 kWh/m²/yr, Δ=23), yet their multidimensional suitability diverges by 24 rank positions. This divergence is driven primarily by differences in urban morphology (D2: 0.524 vs 0.703) and economic conditions (D4: 0.729 vs 0.463).",
+    "[Type B — 形态效应] Within the same climate zone (mild), Guiyang and Lhasa differ sharply in urban morphology (D2: 0.000 vs 0.511), producing a FDSI gap of 0.420 despite similar climatic conditions.",
+    "[Type A — 气候+经济效应] Chongqing (hscw) and Lhasa (mild) share nearly identical urban morphology (D2: 0.581 vs 0.511) but occupy different climate zones, resulting in a FDSI difference of 0.567."
+  ]
+}

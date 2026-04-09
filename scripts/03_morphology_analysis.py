@@ -189,6 +189,21 @@ CITIES = {
         "bbox": None,
         "default_floor_height": 3.0,
     },
+    # ── 2 non-mainland cities (NC extension) ──
+    "hongkong": {
+        "name_en": "Hong Kong", "name_cn": "香港",
+        "climate_zone": "hsww",
+        "place_query": None,
+        "bbox": [22.34, 22.30, 114.19, 114.14],  # Kowloon core
+        "default_floor_height": 3.0,
+    },
+    "taipei": {
+        "name_en": "Taipei", "name_cn": "台北",
+        "climate_zone": "hscw",
+        "place_query": None,
+        "bbox": [25.06, 25.01, 121.57, 121.51],  # Da'an/Zhongzheng/Xinyi
+        "default_floor_height": 3.0,
+    },
 }
 
 # ── 住宅建筑标签 ──

@@ -64,6 +64,8 @@ NEW_CITIES = [
     "fuzhou", "nanning", "haikou",
     # mild
     "lhasa",
+    # non-mainland (NC extension)
+    "hongkong", "taipei",
 ]
 
 RESIDENTIAL_TAGS = {

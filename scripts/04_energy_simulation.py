@@ -431,6 +431,23 @@ CITIES = {
         "electricity_price": 0.368,
         "residential_demand_kwh_m2": 18,
     },
+    # ── 2 non-mainland cities (NC extension) ──
+    "hongkong": {
+        "name_en": "Hong Kong", "name_cn": "香港",
+        "climate_zone": "hsww",
+        "lat": 22.32, "lon": 114.17, "alt": 50,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 1.20,      # CNY-equivalent (HKD ~1.32 × 0.91)
+        "residential_demand_kwh_m2": 45,  # high AC load, dense high-rise
+    },
+    "taipei": {
+        "name_en": "Taipei", "name_cn": "台北",
+        "climate_zone": "hscw",
+        "lat": 25.03, "lon": 121.57, "alt": 9,
+        "tz": "Asia/Taipei",
+        "electricity_price": 0.62,      # CNY-equivalent (TWD ~2.8 × 0.22)
+        "residential_demand_kwh_m2": 32,  # basin city, moderate AC+heating
+    },
 }
 
 # PV 系统统一参数（全国一致，方便对比）

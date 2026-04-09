@@ -138,6 +138,9 @@ CITY_META = {
     "nanning":       {"name_en": "Nanning",       "name_cn": "南宁",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
     "haikou":        {"name_en": "Haikou",        "name_cn": "海口",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
     "lhasa":         {"name_en": "Lhasa",         "name_cn": "拉萨",   "zone": "Mild",        "zone_cn": "温和"},
+    # ── 2 non-mainland cities (NC extension) ──
+    "hongkong":      {"name_en": "Hong Kong",     "name_cn": "香港",   "zone": "HSWW",        "zone_cn": "夏热冬暖（参照）"},
+    "taipei":        {"name_en": "Taipei",        "name_cn": "台北",   "zone": "HSCW",        "zone_cn": "夏热冬冷（参照）"},
 }
 
 CITY_ORDER = [
@@ -146,11 +149,11 @@ CITY_ORDER = [
     # Cold (寒冷) — 13 cities
     "beijing", "tianjin", "jinan", "xian", "taiyuan", "shijiazhuang", "zhengzhou",
     "qingdao", "lanzhou", "yinchuan", "xining", "wuxi", "suzhou",
-    # HSCW (夏热冬冷) — 10 cities
+    # HSCW (夏热冬冷) — 10 cities + Taipei
     "changsha", "wuhan", "nanjing", "chengdu", "hangzhou", "hefei",
-    "nanchang", "ningbo", "shanghai", "chongqing",
-    # HSWW (夏热冬暖) — 6 cities
-    "shenzhen", "guangzhou", "xiamen", "fuzhou", "nanning", "haikou",
+    "nanchang", "ningbo", "shanghai", "chongqing", "taipei",
+    # HSWW (夏热冬暖) — 6 cities + Hong Kong
+    "shenzhen", "guangzhou", "xiamen", "fuzhou", "nanning", "haikou", "hongkong",
     # Mild (温和) — 3 cities
     "kunming", "guiyang", "lhasa",
 ]

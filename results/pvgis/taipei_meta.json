@@ -1,0 +1,10 @@
+{
+  "city": "taipei",
+  "latitude": 25.03,
+  "longitude": 121.57,
+  "api_version": "v5_3",
+  "download_timestamp": "2026-04-09T22:06:44.159222",
+  "results": {
+    "tmy": true
+  }
+}
