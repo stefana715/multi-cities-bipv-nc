@@ -21,8 +21,10 @@ urban_profile:
   development_stage: "new_dominant"
 
 osm:
-  place_query: "碑林区, 西安市, 中国"
-  bbox: null
+  # 原 place_query（碑林区古城核心）FAR=1.09 —— 古城高密度异常值
+  # 改为未央区住宅区（新城北部）：n=8091，65 km²，更代表西安住宅整体
+  place_query: null
+  bbox: [34.38, 34.30, 108.96, 108.88]  # north, south, east, west (weiyang_residential)
   relation_id: null
   residential_tags:
     building: ["residential", "apartments", "house", "detached", "semidetached_house", "terrace"]
@@ -49,7 +51,7 @@ pv_system:
 economics:
   electricity_price_cny_kwh: 0.498    # Shaanxi residential tier-1
   pv_cost_cny_wp: 3.0
-  annual_degradation: 0.005
+  annual_degradation: 0.006
   system_lifetime_years: 25
   discount_rate: 0.06
   subsidy_cny_kwh: 0.0
@@ -64,7 +66,8 @@ monte_carlo:
     module_efficiency: { distribution: "triangular", params: [0.18, 0.20, 0.22] }
     system_losses: { distribution: "uniform", params: [0.10, 0.18] }
     pv_cost_cny_wp: { distribution: "triangular", params: [2.5, 3.0, 4.0] }
-    electricity_price_factor: { distribution: "uniform", params: [0.9, 1.1] }
+    electricity_price_factor: { distribution: "uniform", params: [0.92, 1.08] }
+    annual_degradation: { distribution: "triangular", params: [0.004, 0.006, 0.008] }
 
 sensitivity:
   method: "sobol"

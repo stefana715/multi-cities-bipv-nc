@@ -1,0 +1,2 @@
+mc_n_samples,mc_elapsed_s,mc_yield_mean,mc_yield_std,mc_yield_p05,mc_yield_p50,mc_yield_p95,d5_1_yield_cv,d5_2_pbt_ci95_width,d5_2_pbt_p025,d5_2_pbt_p975,d5_3_prob_pbt_le_15yr,mc_lcoe_mean,mc_lcoe_std,mc_lcoe_p05,mc_lcoe_p95
+10000,0.2,1157.6,98.9,999.6,1154.9,1323.3,0.0854,3.04,3.41,6.45,1.0,0.2615,0.0345,0.2106,0.3227

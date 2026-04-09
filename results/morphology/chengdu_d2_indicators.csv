@@ -1,2 +1,2 @@
 city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
-chengdu,4111,71.545,86.87,87.0,5.24,0.0447,778.2,637.1,3199215.0,2.009,1.83,1.292
+chengdu,8708,85.24,18.46,18.0,14.75,0.0734,718.8,525.7,6259663.0,1.92,1.718,0.616

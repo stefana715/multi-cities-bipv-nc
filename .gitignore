@@ -19,3 +19,12 @@ env/
 # IDE
 .vscode/
 .idea/
+
+# OSMnx query cache (regenerable, ~100 MB)
+cache/
+
+# Backup snapshots
+*.bak_v1
+
+# Compressed archives
+*.zip

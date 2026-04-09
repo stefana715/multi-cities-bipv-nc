@@ -1,18 +1,24 @@
 # =============================================================================
-# Chengdu (成都) - Mild Zone (温和地区) — Climate Zone Note
-# GB 50176-2016 technically classifies Chengdu as HSCW (夏热冬冷).
-# However, given its location in the Sichuan Basin (alt ~500m, moderate temps),
-# it is widely treated as a mild-transitional case in BIPV research.
-# For this paper, Chengdu is included as the mild-zone representative city
-# with high urban density, contrasting with Kunming's plateau character.
-# Reviewers: see Section 2.3 for classification rationale.
+# Chengdu (成都) - Hot Summer Cold Winter Zone (夏热冬冷地区)
+# Climate zone: HSCW per GB 50176-2016 (official standard, no deviation).
+#
+# Why HSCW (not Mild):
+#   GB 50176-2016 defines Mild (温和) as HDD18 < 2000 AND CDD26 < 100.
+#   Chengdu HDD18 ≈ 1700, CDD26 ≈ 70 — borderline, but the standard
+#   explicitly assigns Chengdu to HSCW (夏热冬冷) based on its humid basin
+#   climate, mandatory winter heating load, and summer cooling demand.
+#   Using "Mild" would misrepresent energy needs and invite reviewer rejection.
+#   All prior BIPV studies citing Chengdu use the HSCW classification.
+#
+# Within HSCW, Chengdu is the low-GHI, high-density representative
+# (contrast: Wuhan=central HSCW, Nanjing=eastern HSCW, Chengdu=western HSCW).
 # =============================================================================
 
 city:
   name_en: "Chengdu"
   name_cn: "成都"
-  climate_zone: "mild"
-  climate_zone_cn: "温和"          # 注：按本研究分类；GB 50176-2016 属夏热冬冷
+  climate_zone: "hscw"
+  climate_zone_cn: "夏热冬冷"
   province: "Sichuan"
   latitude: 30.67
   longitude: 104.07
@@ -55,7 +61,7 @@ pv_system:
 economics:
   electricity_price_cny_kwh: 0.502    # Sichuan residential tier-1
   pv_cost_cny_wp: 3.0
-  annual_degradation: 0.005
+  annual_degradation: 0.006
   system_lifetime_years: 25
   discount_rate: 0.06
   subsidy_cny_kwh: 0.0
@@ -66,11 +72,12 @@ monte_carlo:
   sampling_method: "lhs"
   random_seed: 42
   uncertain_params:
-    ghi_uncertainty: 0.05
+    ghi_uncertainty: 0.10   # 四川盆地, 全国最少日照
     module_efficiency: { distribution: "triangular", params: [0.18, 0.20, 0.22] }
     system_losses: { distribution: "uniform", params: [0.10, 0.18] }
     pv_cost_cny_wp: { distribution: "triangular", params: [2.5, 3.0, 4.0] }
     electricity_price_factor: { distribution: "uniform", params: [0.9, 1.1] }
+    annual_degradation: { distribution: "triangular", params: [0.005, 0.006, 0.008] }
 
 sensitivity:
   method: "sobol"

@@ -317,12 +317,11 @@ def main():
     n_res = is_res.sum()
     log.info(f"  住宅建筑: {n_res:,} / {len(gdf):,} ({n_res/len(gdf):.1%})")
 
-    if n_res / len(gdf) < 0.10:
-        log.warning(f"  住宅标签比例过低，将 building=yes 也纳入")
-        if "building" in gdf.columns:
-            is_res |= gdf["building"] == "yes"
-            n_res = is_res.sum()
-            log.info(f"  扩展后: {n_res:,}")
+    # 中国OSM中 building=yes 是住宅的主要标签，始终纳入
+    if "building" in gdf.columns:
+        is_res |= gdf["building"] == "yes"
+        n_res = is_res.sum()
+        log.info(f"  含 building=yes 后: {n_res:,}")
 
     if n_res < 100:
         log.warning(f"  住宅不足100栋，使用全部建筑")

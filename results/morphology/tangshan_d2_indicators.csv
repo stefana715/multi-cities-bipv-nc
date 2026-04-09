@@ -1,0 +1,2 @@
+city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
+tangshan,4831,51.85,19.62,18.0,9.43,0.0718,770.2,611.1,3721005.0,2.239,2.123,0.564

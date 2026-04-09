@@ -1,0 +1,37 @@
+# =============================================================================
+# Policy Scenario Definitions
+# 4 scenarios × 39 cities = 156 FDSI evaluations
+# =============================================================================
+
+scenarios:
+
+  baseline:
+    label: "Baseline (2024)"
+    pv_cost_cny_wp: [2.5, 3.0, 4.0]      # triangular [left, mode, right]
+    carbon_price: 0                         # CNY/tCO₂
+    subsidy: 0.0                            # CNY/kWh additional revenue
+
+  cost_reduction:
+    label: "PV Cost -50% (2030)"
+    pv_cost_cny_wp: [1.2, 1.5, 2.0]       # cost halved
+    carbon_price: 0
+    subsidy: 0.0
+
+  carbon_pricing:
+    label: "Carbon Price 100 CNY/tCO₂"
+    pv_cost_cny_wp: [2.5, 3.0, 4.0]       # unchanged
+    carbon_price: 100                       # CNY/tCO₂
+    subsidy: 0.0
+    # Effective price uplift = carbon_price × grid_emission_factor_kgco2_kwh / 1000
+    # High-carbon provinces (Shanxi/Heilongjiang/Inner Mongolia) benefit most
+
+  aggressive:
+    label: "Aggressive Policy Package"
+    pv_cost_cny_wp: [1.2, 1.5, 2.0]       # cost halved
+    carbon_price: 100                       # CNY/tCO₂
+    subsidy: 0.10                           # CNY/kWh local subsidy
+
+# Suitability thresholds (fixed, percentile-based on baseline)
+thresholds:
+  high: 0.67    # 67th percentile of baseline FDSI
+  medium: 0.33  # 33rd percentile of baseline FDSI

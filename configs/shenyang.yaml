@@ -74,6 +74,7 @@ monte_carlo:
     system_losses: { distribution: "uniform", params: [0.10, 0.18] }
     pv_cost_cny_wp: { distribution: "triangular", params: [2.5, 3.0, 4.0] }
     electricity_price_factor: { distribution: "uniform", params: [0.9, 1.1] }
+    annual_degradation: { distribution: "triangular", params: [0.003, 0.005, 0.007] }
 
 sensitivity:
   method: "sobol"

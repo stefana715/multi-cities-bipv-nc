@@ -142,8 +142,9 @@ CITIES = {
     "xian": {
         "name_en": "Xian", "name_cn": "西安",
         "climate_zone": "cold",
-        "place_query": "碑林区, 西安市, 中国",
-        "bbox": None,
+        # 原 碑林区 FAR=1.09（古城超密集），改为未央区住宅区（更具代表性）
+        "place_query": None,
+        "bbox": (34.38, 34.30, 108.96, 108.88),  # N,S,E,W weiyang_residential
         "default_floor_height": 3.0,
     },
     "wuhan": {

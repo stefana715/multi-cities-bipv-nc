@@ -1,0 +1,2 @@
+city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
+shanghai,4742,32.376,18.22,18.0,11.99,0.1009,688.8,510.9,3266345.0,1.897,1.741,0.809

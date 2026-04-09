@@ -1,0 +1,7 @@
+dimension,Moran_I,Expected_I,z_score,p_value,significance,interpretation
+FDSI,0.2135,-0.0263,2.7941,0.014,*,positive clustering
+D1_Climate,0.1241,-0.0263,1.8985,0.041,*,positive clustering
+D2_Morphology,0.0501,-0.0263,0.8734,0.182,ns,random
+D3_Technical,0.0126,-0.0263,0.4587,0.289,ns,random
+D4_Economic,0.2485,-0.0263,3.2936,0.005,**,positive clustering
+D5_Uncertainty,0.2604,-0.0263,3.6346,0.005,**,positive clustering

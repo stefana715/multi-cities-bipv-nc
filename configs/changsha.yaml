@@ -51,7 +51,7 @@ pv_system:
 economics:
   electricity_price_cny_kwh: 0.588    # Hunan residential tier-1
   pv_cost_cny_wp: 3.0
-  annual_degradation: 0.005
+  annual_degradation: 0.007
   system_lifetime_years: 25
   discount_rate: 0.06
   subsidy_cny_kwh: 0.0
@@ -62,11 +62,12 @@ monte_carlo:
   sampling_method: "lhs"
   random_seed: 42
   uncertain_params:
-    ghi_uncertainty: 0.05
+    ghi_uncertainty: 0.08   # HSCW, 多云多雨
     module_efficiency: { distribution: "triangular", params: [0.18, 0.20, 0.22] }
     system_losses: { distribution: "uniform", params: [0.10, 0.18] }
     pv_cost_cny_wp: { distribution: "triangular", params: [2.5, 3.0, 4.0] }
     electricity_price_factor: { distribution: "uniform", params: [0.9, 1.1] }
+    annual_degradation: { distribution: "triangular", params: [0.005, 0.007, 0.009] }
 
 sensitivity:
   method: "sobol"

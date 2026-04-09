@@ -1,0 +1,2 @@
+city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
+fuzhou,1568,25.462,13.3,12.0,8.98,0.0335,544.8,248.4,854228.0,1.812,1.522,0.273

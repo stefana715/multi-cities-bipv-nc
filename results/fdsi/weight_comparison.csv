@@ -1,6 +1,6 @@
 dimension,w_entropy,w_ahp,w_combined
-D1_Climate,0.2308,0.2063,0.2185
-D2_Morphology,0.1565,0.1093,0.1329
-D3_Technical,0.247,0.2063,0.2266
-D4_Economic,0.1824,0.1093,0.1458
-D5_Uncertainty,0.1834,0.3689,0.2762
+D1_Climate,0.1414,0.2063,0.1739
+D2_Morphology,0.2795,0.1093,0.1944
+D3_Technical,0.2361,0.2063,0.2212
+D4_Economic,0.147,0.1093,0.1281
+D5_Uncertainty,0.196,0.3689,0.2825

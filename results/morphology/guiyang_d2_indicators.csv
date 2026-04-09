@@ -1,2 +1,2 @@
 city,n_buildings,study_area_km2,d2_1_height_mean,d2_1_height_median,d2_1_height_std,d2_2_building_density,d2_3_roof_area_mean,d2_3_roof_area_median,d2_3_roof_area_total_m2,d2_4_compactness_mean,d2_4_compactness_median,d2_5_far
-guiyang,495,161.332,26.78,27.0,3.81,0.003,982.2,676.9,486175.0,1.71,1.527,0.027
+guiyang,707,55.09,16.49,15.0,16.29,0.0206,1601.7,815.7,1132431.0,1.817,1.528,0.139

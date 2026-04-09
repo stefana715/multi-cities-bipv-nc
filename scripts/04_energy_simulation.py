@@ -54,6 +54,7 @@ import warnings
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import yaml
 import numpy as np
 import pandas as pd
 
@@ -107,6 +108,7 @@ PROJECT_DIR = SCRIPT_DIR.parent
 PVGIS_DIR = PROJECT_DIR / "results" / "pvgis"
 MORPHOLOGY_DIR = PROJECT_DIR / "results" / "morphology"
 RESULTS_DIR = PROJECT_DIR / "results" / "energy"
+CONFIG_DIR = PROJECT_DIR / "configs"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -230,11 +232,204 @@ CITIES = {
     },
     "chengdu": {
         "name_en": "Chengdu", "name_cn": "成都",
-        "climate_zone": "mild",
+        "climate_zone": "hscw",          # GB 50176-2016 夏热冬冷 (corrected from mild)
         "lat": 30.67, "lon": 104.07, "alt": 506,
         "tz": "Asia/Shanghai",
         "electricity_price": 0.502,
         "residential_demand_kwh_m2": 25,
+    },
+    # ── 24 new cities (NC expansion) ──
+    "dalian": {
+        "name_en": "Dalian", "name_cn": "大连",
+        "climate_zone": "severe_cold",
+        "lat": 38.91, "lon": 121.61, "alt": 100,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.50,
+        "residential_demand_kwh_m2": 30,
+    },
+    "hohhot": {
+        "name_en": "Hohhot", "name_cn": "呼和浩特",
+        "climate_zone": "severe_cold",
+        "lat": 40.84, "lon": 111.75, "alt": 1065,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.496,
+        "residential_demand_kwh_m2": 32,
+    },
+    "tangshan": {
+        "name_en": "Tangshan", "name_cn": "唐山",
+        "climate_zone": "severe_cold",
+        "lat": 39.63, "lon": 118.18, "alt": 26,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.511,
+        "residential_demand_kwh_m2": 30,
+    },
+    "urumqi": {
+        "name_en": "Urumqi", "name_cn": "乌鲁木齐",
+        "climate_zone": "severe_cold",
+        "lat": 43.83, "lon": 87.61, "alt": 917,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.40,
+        "residential_demand_kwh_m2": 35,
+    },
+    "taiyuan": {
+        "name_en": "Taiyuan", "name_cn": "太原",
+        "climate_zone": "cold",
+        "lat": 37.87, "lon": 112.55, "alt": 778,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.452,
+        "residential_demand_kwh_m2": 28,
+    },
+    "shijiazhuang": {
+        "name_en": "Shijiazhuang", "name_cn": "石家庄",
+        "climate_zone": "cold",
+        "lat": 38.04, "lon": 114.50, "alt": 80,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.511,
+        "residential_demand_kwh_m2": 28,
+    },
+    "lanzhou": {
+        "name_en": "Lanzhou", "name_cn": "兰州",
+        "climate_zone": "cold",
+        "lat": 36.06, "lon": 103.83, "alt": 1520,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.476,
+        "residential_demand_kwh_m2": 26,
+    },
+    "yinchuan": {
+        "name_en": "Yinchuan", "name_cn": "银川",
+        "climate_zone": "cold",
+        "lat": 38.49, "lon": 106.23, "alt": 1111,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.44,
+        "residential_demand_kwh_m2": 27,
+    },
+    "xining": {
+        "name_en": "Xining", "name_cn": "西宁",
+        "climate_zone": "cold",
+        "lat": 36.62, "lon": 101.78, "alt": 2295,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.388,
+        "residential_demand_kwh_m2": 24,
+    },
+    "qingdao": {
+        "name_en": "Qingdao", "name_cn": "青岛",
+        "climate_zone": "cold",
+        "lat": 36.07, "lon": 120.38, "alt": 77,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.547,
+        "residential_demand_kwh_m2": 28,
+    },
+    "wuxi": {
+        "name_en": "Wuxi", "name_cn": "无锡",
+        "climate_zone": "cold",
+        "lat": 31.49, "lon": 120.31, "alt": 5,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.558,
+        "residential_demand_kwh_m2": 30,
+    },
+    "suzhou": {
+        "name_en": "Suzhou", "name_cn": "苏州",
+        "climate_zone": "cold",
+        "lat": 31.30, "lon": 120.62, "alt": 5,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.558,
+        "residential_demand_kwh_m2": 30,
+    },
+    "tianjin": {
+        "name_en": "Tianjin", "name_cn": "天津",
+        "climate_zone": "cold",
+        "lat": 39.08, "lon": 117.20, "alt": 3,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.49,
+        "residential_demand_kwh_m2": 28,
+    },
+    "zhengzhou": {
+        "name_en": "Zhengzhou", "name_cn": "郑州",
+        "climate_zone": "cold",
+        "lat": 34.75, "lon": 113.65, "alt": 110,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.56,
+        "residential_demand_kwh_m2": 28,
+    },
+    "hangzhou": {
+        "name_en": "Hangzhou", "name_cn": "杭州",
+        "climate_zone": "hscw",
+        "lat": 30.27, "lon": 120.15, "alt": 7,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.538,
+        "residential_demand_kwh_m2": 32,
+    },
+    "hefei": {
+        "name_en": "Hefei", "name_cn": "合肥",
+        "climate_zone": "hscw",
+        "lat": 31.82, "lon": 117.23, "alt": 29,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.561,
+        "residential_demand_kwh_m2": 30,
+    },
+    "nanchang": {
+        "name_en": "Nanchang", "name_cn": "南昌",
+        "climate_zone": "hscw",
+        "lat": 28.68, "lon": 115.86, "alt": 29,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.60,
+        "residential_demand_kwh_m2": 33,
+    },
+    "ningbo": {
+        "name_en": "Ningbo", "name_cn": "宁波",
+        "climate_zone": "hscw",
+        "lat": 29.87, "lon": 121.55, "alt": 4,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.538,
+        "residential_demand_kwh_m2": 32,
+    },
+    "shanghai": {
+        "name_en": "Shanghai", "name_cn": "上海",
+        "climate_zone": "hscw",
+        "lat": 31.23, "lon": 121.47, "alt": 4,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.617,
+        "residential_demand_kwh_m2": 35,
+    },
+    "chongqing": {
+        "name_en": "Chongqing", "name_cn": "重庆",
+        "climate_zone": "hscw",
+        "lat": 29.56, "lon": 106.55, "alt": 259,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.522,
+        "residential_demand_kwh_m2": 30,
+    },
+    "fuzhou": {
+        "name_en": "Fuzhou", "name_cn": "福州",
+        "climate_zone": "hsww",
+        "lat": 26.07, "lon": 119.30, "alt": 84,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.618,
+        "residential_demand_kwh_m2": 38,
+    },
+    "nanning": {
+        "name_en": "Nanning", "name_cn": "南宁",
+        "climate_zone": "hsww",
+        "lat": 22.82, "lon": 108.37, "alt": 73,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.618,
+        "residential_demand_kwh_m2": 40,
+    },
+    "haikou": {
+        "name_en": "Haikou", "name_cn": "海口",
+        "climate_zone": "hsww",
+        "lat": 20.04, "lon": 110.32, "alt": 14,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.598,
+        "residential_demand_kwh_m2": 42,
+    },
+    "lhasa": {
+        "name_en": "Lhasa", "name_cn": "拉萨",
+        "climate_zone": "mild",
+        "lat": 29.65, "lon": 91.11, "alt": 3658,
+        "tz": "Asia/Shanghai",
+        "electricity_price": 0.368,
+        "residential_demand_kwh_m2": 18,
     },
 }
 
@@ -259,6 +454,7 @@ MC_PARAMS = {
     "system_losses": {"dist": "uniform", "low": 0.10, "high": 0.18},
     "pv_cost": {"dist": "triangular", "left": 2.5, "mode": 3.0, "right": 4.0},
     "elec_price_factor": {"dist": "uniform", "low": 0.9, "high": 1.1},
+    "annual_degradation": {"dist": "triangular", "left": 0.004, "mode": 0.005, "right": 0.007},
 }
 
 
@@ -610,6 +806,70 @@ def compute_d4_economics(
 # 4. D5 Monte Carlo 不确定性分析
 # ============================================================================
 
+def load_city_mc_params(city_key: str) -> dict:
+    """
+    从城市 YAML 配置加载 monte_carlo.uncertain_params，转换为 lhs_sample 所需格式。
+    若文件不存在或解析失败，返回全局默认 MC_PARAMS。
+
+    YAML 字段 → lhs_sample key 映射：
+      ghi_uncertainty (scalar)    → ghi_factor      (normal, loc=1.0)
+      module_efficiency           → module_efficiency (triangular)
+      system_losses               → system_losses    (uniform)
+      pv_cost_cny_wp              → pv_cost          (triangular)
+      electricity_price_factor    → elec_price_factor (uniform)
+      annual_degradation          → annual_degradation (triangular)
+    """
+    config_path = CONFIG_DIR / f"{city_key}.yaml"
+    if not config_path.exists():
+        return MC_PARAMS.copy()
+
+    try:
+        with open(config_path) as f:
+            cfg = yaml.safe_load(f)
+        up = cfg.get("monte_carlo", {}).get("uncertain_params", {})
+        if not up:
+            return MC_PARAMS.copy()
+    except Exception as e:
+        log.warning(f"  无法加载 {config_path}: {e}，使用默认 MC_PARAMS")
+        return MC_PARAMS.copy()
+
+    def _triangular(params):
+        return {"dist": "triangular", "left": params[0], "mode": params[1], "right": params[2]}
+
+    def _uniform(params):
+        return {"dist": "uniform", "low": params[0], "high": params[1]}
+
+    def _parse(entry):
+        if isinstance(entry, dict):
+            d = entry.get("distribution", "")
+            p = entry.get("params", [])
+            if d == "triangular":
+                return _triangular(p)
+            elif d == "uniform":
+                return _uniform(p)
+        return None
+
+    result = {}
+
+    # ghi_uncertainty → normal dist centered at 1.0
+    if "ghi_uncertainty" in up:
+        result["ghi_factor"] = {"dist": "normal", "loc": 1.0, "scale": float(up["ghi_uncertainty"])}
+    else:
+        result["ghi_factor"] = MC_PARAMS["ghi_factor"]
+
+    for yaml_key, lhs_key in [
+        ("module_efficiency",        "module_efficiency"),
+        ("system_losses",            "system_losses"),
+        ("pv_cost_cny_wp",           "pv_cost"),
+        ("electricity_price_factor", "elec_price_factor"),
+        ("annual_degradation",       "annual_degradation"),
+    ]:
+        parsed = _parse(up.get(yaml_key))
+        result[lhs_key] = parsed if parsed is not None else MC_PARAMS[lhs_key]
+
+    return result
+
+
 def lhs_sample(n_samples: int, param_defs: dict, seed: int = 42) -> pd.DataFrame:
     """
     Latin Hypercube Sampling 生成参数样本。
@@ -670,7 +930,7 @@ def mc_energy_model(params_row: dict, ghi_annual: float, elec_price_base: float)
     # LCOE
     r = PV_SYSTEM_PARAMS["discount_rate"]
     n = PV_SYSTEM_PARAMS["system_lifetime"]
-    deg = PV_SYSTEM_PARAMS["annual_degradation"]
+    deg = params_row.get("annual_degradation", PV_SYSTEM_PARAMS["annual_degradation"])
     pv_energy = sum(specific_yield * (1 - deg) ** t / (1 + r) ** t for t in range(1, n + 1))
     pv_om = sum(om / (1 + r) ** t for t in range(1, n + 1))
     lcoe = (capex + pv_om) / pv_energy if pv_energy > 0 else 99
@@ -688,6 +948,7 @@ def run_monte_carlo(
     elec_price: float,
     n_samples: int = 10000,
     seed: int = 42,
+    mc_params: Optional[dict] = None,
 ) -> Dict:
     """
     Monte Carlo 模拟，输出 D5 子指标。
@@ -697,7 +958,8 @@ def run_monte_carlo(
     t0 = time.time()
 
     # LHS 抽样
-    samples_df = lhs_sample(n_samples, MC_PARAMS, seed=seed)
+    _params = mc_params if mc_params is not None else MC_PARAMS
+    samples_df = lhs_sample(n_samples, _params, seed=seed)
 
     # 批量模拟
     results = []
@@ -761,6 +1023,7 @@ def run_sobol_analysis(
     ghi_annual: float,
     elec_price: float,
     n_samples: int = 4096,
+    mc_params: Optional[dict] = None,
 ) -> Dict:
     """
     Sobol 全局敏感性分析。
@@ -771,18 +1034,19 @@ def run_sobol_analysis(
         log.warning("  SALib 未安装，跳过 Sobol 分析")
         return {"sobol_status": "skipped_no_salib"}
 
-    log.info(f"  Sobol 分析: N={n_samples} (总模型调用 ≈ {n_samples * (2 * len(MC_PARAMS) + 2):,})")
+    _params = mc_params if mc_params is not None else MC_PARAMS
+    log.info(f"  Sobol 分析: N={n_samples} (总模型调用 ≈ {n_samples * (2 * len(_params) + 2):,})")
     t0 = time.time()
 
     # 定义问题
-    param_names = list(MC_PARAMS.keys())
+    param_names = list(_params.keys())
     problem = {
         "num_vars": len(param_names),
         "names": param_names,
         "bounds": [],
     }
 
-    for name, pdef in MC_PARAMS.items():
+    for name, pdef in _params.items():
         if pdef["dist"] == "normal":
             # ±3σ 范围
             lo = pdef["loc"] - 3 * pdef["scale"]
@@ -962,7 +1226,9 @@ def process_city(
     ghi_annual = d1.get("d1_1_ghi_annual_kwh", 1000)
     elec_price = city_info["electricity_price"]
 
-    mc_result = run_monte_carlo(ghi_annual, elec_price, n_samples=mc_samples)
+    city_mc_params = load_city_mc_params(city_key)
+    mc_result = run_monte_carlo(ghi_annual, elec_price, n_samples=mc_samples,
+                                mc_params=city_mc_params)
     result.update(mc_result)
 
     pd.DataFrame([mc_result]).to_csv(RESULTS_DIR / f"{city_key}_mc_summary.csv", index=False)
@@ -970,7 +1236,8 @@ def process_city(
     # ── 6. D5: Sobol 分析 ──
     if not skip_sobol:
         log.info("  [D5] Sobol 敏感性分析...")
-        sobol = run_sobol_analysis(ghi_annual, elec_price, n_samples=sobol_samples)
+        sobol = run_sobol_analysis(ghi_annual, elec_price, n_samples=sobol_samples,
+                                   mc_params=city_mc_params)
         result.update(sobol)
 
         pd.DataFrame([sobol]).to_csv(RESULTS_DIR / f"{city_key}_sobol_indices.csv", index=False)

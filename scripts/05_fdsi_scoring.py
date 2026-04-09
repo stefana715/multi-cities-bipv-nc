@@ -112,15 +112,47 @@ CITY_META = {
     "guangzhou": {"name_en": "Guangzhou", "name_cn": "广州",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
     "xiamen":    {"name_en": "Xiamen",    "name_cn": "厦门",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
     "guiyang":   {"name_en": "Guiyang",   "name_cn": "贵阳",   "zone": "Mild",        "zone_cn": "温和"},
-    "chengdu":   {"name_en": "Chengdu",   "name_cn": "成都",   "zone": "Mild",        "zone_cn": "温和"},
+    "chengdu":   {"name_en": "Chengdu",   "name_cn": "成都",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},  # corrected
+    # ── 24 new cities (NC expansion) ──
+    "dalian":        {"name_en": "Dalian",        "name_cn": "大连",   "zone": "Severe Cold", "zone_cn": "严寒"},
+    "hohhot":        {"name_en": "Hohhot",        "name_cn": "呼和浩特","zone": "Severe Cold", "zone_cn": "严寒"},
+    "tangshan":      {"name_en": "Tangshan",      "name_cn": "唐山",   "zone": "Severe Cold", "zone_cn": "严寒"},
+    "urumqi":        {"name_en": "Urumqi",        "name_cn": "乌鲁木齐","zone": "Severe Cold", "zone_cn": "严寒"},
+    "taiyuan":       {"name_en": "Taiyuan",       "name_cn": "太原",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "shijiazhuang":  {"name_en": "Shijiazhuang",  "name_cn": "石家庄", "zone": "Cold",        "zone_cn": "寒冷"},
+    "lanzhou":       {"name_en": "Lanzhou",       "name_cn": "兰州",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "yinchuan":      {"name_en": "Yinchuan",      "name_cn": "银川",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "xining":        {"name_en": "Xining",        "name_cn": "西宁",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "qingdao":       {"name_en": "Qingdao",       "name_cn": "青岛",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "wuxi":          {"name_en": "Wuxi",          "name_cn": "无锡",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "suzhou":        {"name_en": "Suzhou",        "name_cn": "苏州",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "tianjin":       {"name_en": "Tianjin",       "name_cn": "天津",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "zhengzhou":     {"name_en": "Zhengzhou",     "name_cn": "郑州",   "zone": "Cold",        "zone_cn": "寒冷"},
+    "hangzhou":      {"name_en": "Hangzhou",      "name_cn": "杭州",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "hefei":         {"name_en": "Hefei",         "name_cn": "合肥",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "nanchang":      {"name_en": "Nanchang",      "name_cn": "南昌",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "ningbo":        {"name_en": "Ningbo",        "name_cn": "宁波",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "shanghai":      {"name_en": "Shanghai",      "name_cn": "上海",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "chongqing":     {"name_en": "Chongqing",     "name_cn": "重庆",   "zone": "HSCW",        "zone_cn": "夏热冬冷"},
+    "fuzhou":        {"name_en": "Fuzhou",        "name_cn": "福州",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
+    "nanning":       {"name_en": "Nanning",       "name_cn": "南宁",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
+    "haikou":        {"name_en": "Haikou",        "name_cn": "海口",   "zone": "HSWW",        "zone_cn": "夏热冬暖"},
+    "lhasa":         {"name_en": "Lhasa",         "name_cn": "拉萨",   "zone": "Mild",        "zone_cn": "温和"},
 }
 
 CITY_ORDER = [
-    "harbin", "changchun", "shenyang",       # Severe Cold
-    "beijing", "jinan", "xian",              # Cold
-    "changsha", "wuhan", "nanjing",          # HSCW
-    "shenzhen", "guangzhou", "xiamen",       # HSWW
-    "kunming", "guiyang", "chengdu",         # Mild
+    # Severe Cold (严寒) — 7 cities
+    "harbin", "changchun", "shenyang", "dalian", "hohhot", "tangshan", "urumqi",
+    # Cold (寒冷) — 13 cities
+    "beijing", "tianjin", "jinan", "xian", "taiyuan", "shijiazhuang", "zhengzhou",
+    "qingdao", "lanzhou", "yinchuan", "xining", "wuxi", "suzhou",
+    # HSCW (夏热冬冷) — 10 cities
+    "changsha", "wuhan", "nanjing", "chengdu", "hangzhou", "hefei",
+    "nanchang", "ningbo", "shanghai", "chongqing",
+    # HSWW (夏热冬暖) — 6 cities
+    "shenzhen", "guangzhou", "xiamen", "fuzhou", "nanning", "haikou",
+    # Mild (温和) — 3 cities
+    "kunming", "guiyang", "lhasa",
 ]
 
 
@@ -225,20 +257,20 @@ def select_dimension_indicators(df: pd.DataFrame) -> Dict[str, Dict]:
             "pbt_ci_width": {
                 "col": "d5_2_pbt_ci95_width",
                 "is_benefit": False,     # CI 越窄 → 越确定 → 越好
-                "weight_within": 0.40,   # 更新: 0.35 → 0.40 (Phase 2 revision)
+                "weight_within": 0.35,   # Phase 3: 0.40 → 0.35
                 "label": "PBT 95% CI Width (yr)",
             },
             "lcoe_cv": {
                 "col": "mc_lcoe_std",
                 "is_benefit": False,     # LCOE 标准差越小 → 越确定 → 越好
-                "weight_within": 0.35,   # 更新: 0.30 → 0.35 (Phase 2 revision)
+                "weight_within": 0.30,   # Phase 3: 0.35 → 0.30
                 "label": "LCOE Std Dev",
             },
-            "interaction_ratio": {
-                "col": "d5_4_interaction_ratio_pbt",
-                "is_benefit": False,     # 交互效应越小 → 越好预测 → 越好
-                "weight_within": 0.25,   # 更新: 0.35 → 0.25 (Phase 2 revision)
-                "label": "Sobol Interaction Ratio (PBT)",
+            "elec_price_sensitivity": {
+                "col": "sobol_pbt_S1_elec_price_factor",
+                "is_benefit": False,     # 电价敏感性越低 → 受市场波动影响小 → 越好
+                "weight_within": 0.35,   # Phase 3: 0.25 → 0.35，引入独立市场风险维度
+                "label": "Sobol PBT Sensitivity to Electricity Price",
             },
         },
     }
@@ -440,21 +472,22 @@ def build_suitability_matrix(df: pd.DataFrame, fdsi: pd.Series,
         dom_factor_yield = df.loc[idx].get("d5_5_dominant_factor_yield", "N/A")
         dom_factor_pbt = df.loc[idx].get("d5_5_dominant_factor_pbt", "N/A")
 
+        fdsi_val = fdsi.loc[city_key]
         rows.append({
             "city": meta["name_en"],
             "city_cn": meta["name_cn"],
             "climate_zone": meta["zone"],
             "climate_zone_cn": meta["zone_cn"],
             "dominant_morphology": dominant,
-            "fdsi_score": round(fdsi.iloc[i], 4),
+            "fdsi_score": round(fdsi_val, 4),
             "fdsi_rank": 0,  # 填充在下面
-            "suitability": suitability_grade(fdsi.iloc[i]),
-            "uncertainty": uncertainty_grade(d5[i]),
-            "D1_score": round(dim_scores.iloc[i]["D1_Climate"], 3),
-            "D2_score": round(dim_scores.iloc[i]["D2_Morphology"], 3),
-            "D3_score": round(dim_scores.iloc[i]["D3_Technical"], 3),
-            "D4_score": round(dim_scores.iloc[i]["D4_Economic"], 3),
-            "D5_score": round(dim_scores.iloc[i]["D5_Uncertainty"], 3),
+            "suitability": suitability_grade(fdsi_val),
+            "uncertainty": uncertainty_grade(dim_scores.loc[city_key, "D5_Uncertainty"]),
+            "D1_score": round(dim_scores.loc[city_key, "D1_Climate"], 3),
+            "D2_score": round(dim_scores.loc[city_key, "D2_Morphology"], 3),
+            "D3_score": round(dim_scores.loc[city_key, "D3_Technical"], 3),
+            "D4_score": round(dim_scores.loc[city_key, "D4_Economic"], 3),
+            "D5_score": round(dim_scores.loc[city_key, "D5_Uncertainty"], 3),
             "dominant_factor_yield": dom_factor_yield,
             "dominant_factor_pbt": dom_factor_pbt,
         })
@@ -490,16 +523,29 @@ def plot_radar(dim_scores: pd.DataFrame, save_path: Path):
     ]
     city_labels = [f"{CITY_META[c]['name_en']}\n({CITY_META[c]['zone']})" for c in CITY_ORDER]
 
+    # 生成足够颜色（与 CITY_ORDER 等长）
+    import itertools
+    _palette = colors + [
+        "#F06292", "#AD1457", "#880E4F",   # extra pinks
+        "#26C6DA", "#00838F", "#006064",   # extra cyans
+        "#DCE775", "#9E9D24", "#827717",   # extra yellows
+        "#A5D6A7", "#388E3C", "#1B5E20",   # extra greens
+        "#CE93D8", "#7B1FA2", "#4A148C",   # extra purples
+        "#FFCC80", "#E65100", "#BF360C",   # extra oranges
+        "#90CAF9", "#1565C0", "#0D47A1",   # extra blues
+    ]
+    _colors_cycle = list(itertools.islice(itertools.cycle(_palette), len(CITY_ORDER)))
+
     fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
 
     for i, city_key in enumerate(CITY_ORDER):
-        if i >= len(dim_scores):
+        if city_key not in dim_scores.index:
             continue
-        values = dim_scores.iloc[i].values.tolist()
+        values = dim_scores.loc[city_key].values.tolist()
         values += values[:1]
-        ax.plot(angles, values, "o-", linewidth=2.5, color=colors[i],
+        ax.plot(angles, values, "o-", linewidth=2.5, color=_colors_cycle[i],
                 label=city_labels[i], markersize=8)
-        ax.fill(angles, values, alpha=0.08, color=colors[i])
+        ax.fill(angles, values, alpha=0.08, color=_colors_cycle[i])
 
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(categories, fontsize=13, fontweight="bold")
@@ -596,15 +642,28 @@ def plot_weight_sensitivity(sensitivity_df: pd.DataFrame, save_path: Path):
     if not HAS_MPL:
         return
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 8))
 
-    colors = [
-        "#E53935", "#C62828", "#B71C1C",   # Severe Cold (reds)
-        "#1E88E5", "#1565C0", "#0D47A1",   # Cold (blues)
-        "#43A047", "#2E7D32", "#1B5E20",   # HSCW (greens)
-        "#FB8C00", "#E65100", "#BF360C",   # HSWW (oranges)
-        "#8E24AA", "#6A1B9A", "#4A148C",   # Mild (purples)
-    ]
+    # Dynamic color palette scaled to number of cities
+    import matplotlib.cm as _cm
+    _zone_cmaps2 = {
+        "Severe Cold": _cm.Reds,
+        "Cold": _cm.Blues,
+        "HSCW": _cm.Greens,
+        "HSWW": _cm.Oranges,
+        "Mild": _cm.Purples,
+    }
+    _zc2: dict = {}
+    for _c2 in CITY_ORDER:
+        _z2 = CITY_META[_c2]["zone"]
+        _zc2[_z2] = _zc2.get(_z2, 0) + 1
+    _zi2: dict = {_z2: 0 for _z2 in _zc2}
+    colors_ws = []
+    for _c2 in CITY_ORDER:
+        _z2 = CITY_META[_c2]["zone"]
+        _frac2 = 0.4 + 0.5 * (_zi2[_z2] / max(_zc2[_z2] - 1, 1))
+        colors_ws.append(_zone_cmaps2[_z2](_frac2))
+        _zi2[_z2] += 1
     city_labels = [CITY_META[c]["name_en"] for c in CITY_ORDER]
 
     # Panel 1: FDSI score vs alpha
@@ -612,12 +671,12 @@ def plot_weight_sensitivity(sensitivity_df: pd.DataFrame, save_path: Path):
         city_data = sensitivity_df[sensitivity_df["object"] == city]
         if not city_data.empty:
             ax1.plot(city_data["alpha"], city_data["fdsi_score"],
-                     "o-", color=colors[i], label=city, linewidth=2, markersize=5)
+                     "o-", color=colors_ws[i], label=city, linewidth=2, markersize=5)
 
     ax1.set_xlabel("α (Objective Weight Ratio)", fontsize=12)
     ax1.set_ylabel("FDSI Score", fontsize=12)
     ax1.set_title("(a) FDSI Score Sensitivity to α", fontsize=13, fontweight="bold")
-    ax1.legend(fontsize=9)
+    ax1.legend(fontsize=7, ncol=2)
     ax1.grid(True, alpha=0.3)
 
     # Panel 2: Rank vs alpha
@@ -625,14 +684,13 @@ def plot_weight_sensitivity(sensitivity_df: pd.DataFrame, save_path: Path):
         city_data = sensitivity_df[sensitivity_df["object"] == city]
         if not city_data.empty:
             ax2.plot(city_data["alpha"], city_data["rank"],
-                     "o-", color=colors[i], label=city, linewidth=2, markersize=5)
+                     "o-", color=colors_ws[i], label=city, linewidth=2, markersize=5)
 
     ax2.set_xlabel("α (Objective Weight Ratio)", fontsize=12)
     ax2.set_ylabel("Rank", fontsize=12)
     ax2.set_title("(b) Rank Stability Across α", fontsize=13, fontweight="bold")
-    ax2.set_yticks(range(1, 6))
     ax2.invert_yaxis()
-    ax2.legend(fontsize=9)
+    ax2.legend(fontsize=7, ncol=2)
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -713,10 +771,11 @@ def main():
     log.info("\n[5] FDSI 综合评分...")
     fdsi = pd.Series(compute_fdsi(dim_scores, w_combined), index=dim_scores.index)
 
+    actual_cities = list(fdsi.index)  # city-name strings in sort order
     fdsi_df = pd.DataFrame({
-        "city": CITY_ORDER[:len(fdsi)],
-        "name_en": [CITY_META[c]["name_en"] for c in CITY_ORDER[:len(fdsi)]],
-        "climate_zone": [CITY_META[c]["zone"] for c in CITY_ORDER[:len(fdsi)]],
+        "city": actual_cities,
+        "name_en": [CITY_META[c]["name_en"] for c in actual_cities],
+        "climate_zone": [CITY_META[c]["zone"] for c in actual_cities],
         "fdsi_score": fdsi.values.round(4),
     })
     fdsi_df = fdsi_df.sort_values("fdsi_score", ascending=False)

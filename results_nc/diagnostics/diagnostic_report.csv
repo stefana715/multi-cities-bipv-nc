@@ -1,0 +1,2 @@
+﻿spearman_rs,spearman_p,kendall_tau,kendall_p,pearson_r,pearson_p,mean_abs_rank_diff,max_abs_rank_diff,n_big_diff,D5_vs_D1_r,D5_vs_D1_p,D5_vs_D2_r,D5_vs_D2_p,D5_vs_D3_r,D5_vs_D3_p,D5_vs_D4_r,D5_vs_D4_p,D5_from_D1D4_R2
+0.7387,0.0,0.5762,0.0,0.8363,0.0,5.49,22,21,0.636,0.0,0.1057,0.522,0.3263,0.0426,0.7147,0.0,0.5144
