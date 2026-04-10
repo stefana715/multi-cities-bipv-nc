@@ -1,0 +1,9 @@
+﻿scheme,n_groups,n_correct,n_misclassified,pct_misclassified,n_severe,pct_severe
+tercile,3,28,13,31.7,1.0,2.4
+quartile,4,22,19,46.3,5.0,12.2
+quintile,5,20,21,51.2,8.0,19.5
+targeting_top_10%,k=4,3,1,25.0,,
+targeting_top_20%,k=8,5,3,37.5,,
+targeting_top_25%,k=10,8,2,20.0,,
+targeting_top_33%,k=13,9,4,30.8,,
+targeting_top_50%,k=20,13,7,35.0,,

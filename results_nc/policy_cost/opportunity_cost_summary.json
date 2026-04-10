@@ -1,0 +1,19 @@
+{
+  "n_cities": 41,
+  "total_sample_capacity_mw": 16126.0,
+  "total_sample_generation_gwh": 21602.5,
+  "targeting_top_third": {
+    "k": 13,
+    "n_missed": 4,
+    "missed_capacity_mw": 1552.0,
+    "missed_generation_gwh": 2043.5,
+    "missed_co2_kt": 1123.9,
+    "missed_population_million": 66.9
+  },
+  "sensitivity": {
+    "tercile_misclass_pct": 31.7,
+    "quartile_misclass_pct": 46.3,
+    "quintile_misclass_pct": 51.2
+  },
+  "abstract_sentence": "If the top third of cities are selected for priority deployment based on solar resource alone, 4 cities with 67 million residents and an estimated 2044 GWh/yr of rooftop PV potential would be systematically overlooked."
+}

@@ -79,6 +79,8 @@ GRID_EMISSION_FACTORS = {
     "西北":  0.6671,   # 陕西、甘肃、宁夏、青海、新疆
     "南方":  0.4267,   # 广东、广西、云南、贵州、海南
     "西藏":  0.1200,   # 可再生能源为主
+    "香港":  0.7000,   # HK Grid (CLP+HKE, natural gas dominant, EMSD 2023)
+    "台湾":  0.5000,   # Taiwan Grid (Taipower, gas+coal+nuclear+renewables, MOEA 2023)
 }
 
 # 城市 → 省份 → 电网区域 映射
@@ -122,6 +124,9 @@ CITY_PROVINCE_GRID = {
     "kunming":      ("云南",   "南方"),
     "guiyang":      ("贵州",   "南方"),
     "lhasa":        ("西藏",   "西藏"),
+    # Non-mainland cities (NC extension)
+    "hongkong":     ("香港特别行政区", "香港"),
+    "taipei":       ("台湾",   "台湾"),
 }
 
 # 城市基础电价（CNY/kWh）— 与 04_energy_simulation.py 一致
@@ -138,6 +143,9 @@ CITY_ELEC_PRICE = {
     "shenzhen": 0.68, "guangzhou": 0.68, "xiamen": 0.618,
     "fuzhou": 0.618, "nanning": 0.618, "haikou": 0.598,
     "kunming": 0.45, "guiyang": 0.468, "lhasa": 0.368,
+    # Non-mainland cities
+    "hongkong": 1.20,   # CNY-equivalent (HKD ~1.32 × 0.91)
+    "taipei":   0.62,   # CNY-equivalent (TWD ~2.8 × 0.22)
 }
 
 # PV 系统固定参数
@@ -189,8 +197,8 @@ CITY_ORDER = [
     "beijing", "tianjin", "jinan", "xian", "taiyuan", "shijiazhuang", "zhengzhou",
     "qingdao", "lanzhou", "yinchuan", "xining", "wuxi", "suzhou",
     "changsha", "wuhan", "nanjing", "chengdu", "hangzhou", "hefei",
-    "nanchang", "ningbo", "shanghai", "chongqing",
-    "shenzhen", "guangzhou", "xiamen", "fuzhou", "nanning", "haikou",
+    "nanchang", "ningbo", "shanghai", "chongqing", "taipei",
+    "shenzhen", "guangzhou", "xiamen", "fuzhou", "nanning", "haikou", "hongkong",
     "kunming", "guiyang", "lhasa",
 ]
 
@@ -305,7 +313,7 @@ def calc_d5_mc(specific_yield: float, elec_price_eff: float,
 # ============================================================================
 
 def run_all_scenarios(base_df: pd.DataFrame) -> pd.DataFrame:
-    """对 4 个情景 × 39 个城市计算 D4/D5。"""
+    """对 4 个情景 × 41 个城市计算 D4/D5。"""
     records = []
 
     for scen_key, scen in SCENARIOS.items():

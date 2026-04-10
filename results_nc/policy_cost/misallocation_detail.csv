@@ -1,0 +1,5 @@
+﻿strategy,k,n_overlap,n_missed,n_false_positive,missed_cities,missed_capacity_mw,missed_generation_gwh,missed_co2_kt,missed_population_million,false_positive_cities,ghi_strategy_total_gwh,fdsi_strategy_total_gwh,net_generation_diff_gwh
+Top third (33%),13,9,4,4,"Beijing, Xian, Wuhan, Guangzhou",1552.0,2043.5,1123.9,66.9,"Dalian, Urumqi, Qingdao, Hong Kong",8825.4,8687.0,-138.4
+Top quarter (25%),10,8,2,2,"Beijing, Shijiazhuang",361.0,498.2,274.0,32.7,"Urumqi, Qingdao",7319.6,6933.4,-386.2
+Top fifth (20%),8,5,3,3,"Beijing, Shijiazhuang, Kunming",1437.0,2010.2,1105.6,41.2,"Hohhot, Qingdao, Xiamen",5663.9,6306.6,642.7
+Top half (50%),20,13,7,7,"Harbin, Changchun, Shenyang, Changsha, Wuhan, Shenzhen, Guangzhou",2287.0,2923.2,1607.7,88.7,"Dalian, Tangshan, Urumqi, Tianjin, Taiyuan, Qingdao, Hong Kong",13054.8,11191.2,-1863.6
