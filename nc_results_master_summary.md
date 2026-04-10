@@ -14,7 +14,7 @@
 | GHI 无法捕获的排名变异 | 42.2% | Results §1 |
 | 三分位误分类率 | 31.7% (13/41) | Results §1 |
 | 中位排名偏移 | 5.0 位 | Results §1 |
-| 最大排名偏移 | 22 位 (Urumqi) / 21 位 (Hong Kong) | Results §1 |
+| 最大排名偏移 | 21 位 (Hong Kong) / 20 位 (Changsha) | Results §1 |
 | \|shift\| ≥ 5 的城市 | 51.2% (21/41) | Results §1 |
 | 持续误分类城市 (全5方案) | 6 城 | Results §2 |
 

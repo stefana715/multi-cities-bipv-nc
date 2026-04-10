@@ -475,7 +475,6 @@ def make_fig4():
     try:
         import cartopy.crs as ccrs
         import cartopy.feature as cfeature
-        import cartopy.io.shapereader as shpreader
         HAS_CARTOPY = True
     except ImportError:
         HAS_CARTOPY = False
